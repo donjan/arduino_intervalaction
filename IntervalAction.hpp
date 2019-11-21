@@ -142,6 +142,7 @@ class IntervalActionTPL {
 #ifdef ARDUINO_ONLY_CODE_SECTION
 
 #include <tool/clock.hpp>  // https://github.com/mskoenz/arduino_crash_course
+#include <diag.hpp>  // https://github.com/mskoenz/arduino_crash_course
 #include <Arduino.h>
 
 /**
