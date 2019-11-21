@@ -213,14 +213,14 @@ class IntervalActionUstdClock {
  * This doesn't account for itself (maybe at least 10% wrong final value).
  */
 #define IA_PRINT_LOAD(time_start, time_end) {                                  \
-  static uint32_t _duty_done = 0;                                              \
-  _duty_done += time_end - time_start;                                         \
+  static uint32_t _work_done = 0;                                              \
+  _work_done += time_end - time_start;                                         \
   static IntervalActionUstdClock _ia_duty_cycle_report(1'000'000);             \
   _ia_duty_cycle_report([](){                                                  \
     Serial.print("Load: ");                                                    \
-    Serial.print(100*(float(_duty_done) / 1'000'000));                         \
+    Serial.print(100*(float(_work_done) / 1'000'000));                         \
     Serial.println("%");                                                       \
-    _duty_done = 0;                                                            \
+    _work_done = 0;                                                            \
   });                                                                          \
 }                                                                             //
 
